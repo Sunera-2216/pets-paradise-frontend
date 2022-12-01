@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="row" style="margin-top: 50px;">
+    <div class="col-md-3">
+      <!-- <div class="card-login">
+        <div class="text-center">
+          <h1>LOGIN</h1>
+          <h4>Please enter email and password!</h4>
+          <h3 id="loginError" style="color: red;"></h3>
+        </div>
+        <form [formGroup]="loginsellerForm" (ngSubmit)="loginSeller()">
+          <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" formControlName="sEmail" class="form-control" name="sEmail"
+              [(ngModel)]="seller.sEmail"><br>
+            <span class="text-danger"
+              *ngIf="loginsellerForm.controls['sEmail'].dirty && loginsellerForm.hasError('required','sEmail')">*Email
+              ID is Required</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" formControlName="sPassword" class="form-control" name="sPassword"
+              [(ngModel)]="seller.sPassword"><br>
+            <span class="text-danger"
+              *ngIf="loginsellerForm.controls['sPassword'].dirty && loginsellerForm.hasError('required','sPassword')">*Password
+              is Required</span>
+          </div>
+          <button type="submit" [disabled]="!loginsellerForm.valid" class="btn btn-info mb-3">Login</button>
+        </form>
+      </div> -->
+    </div>
+    <div class="col-md-6">
+      <div class="card-signup">
+        <div class="text-center">
+          <h1>SIGN UP</h1>
+          <h4>Register your Self!</h4>
+        </div>
+        <form [formGroup]="signupSellerForm" (ngSubmit)="registerSeller()">
+          <div class="mb-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" formControlName="sFirstName" class="form-control" name="sFirstName"
+              [(ngModel)]="seller.sFirstName"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sFirstName'].dirty && signupSellerForm.hasError('required','sFirstName')">*First
+              Name is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" formControlName="sLastName" class="form-control" name="sLastName"
+              [(ngModel)]="seller.sLastName"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sLastName'].dirty && signupSellerForm.hasError('required','sLastName')">*Last
+              Name is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="fullname" class="form-label">Full Name</label>
+            <input type="text" formControlName="sFullName" class="form-control" name="sFullName"
+              [(ngModel)]="seller.sFullName"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sFullName'].dirty && signupSellerForm.hasError('required','sFullName')">*Full
+              Name is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Address</label>
+            <input type="text" formControlName="sAddress" class="form-control" name="sAddress"
+              [(ngModel)]="seller.sAddress"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sAddress'].dirty && signupSellerForm.hasError('required','sAddress')">*Address
+              is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" formControlName="sEmail" class="form-control" name="sEmail"
+              [(ngModel)]="seller.sEmail"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sEmail'].dirty && signupSellerForm.hasError('required','sEmail')">*Email
+              ID is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="contactnumber" class="form-label">Contact Number</label>
+            <input type="tel" formControlName="sContactNumber" class="form-control" name="sContactNumber"
+              [(ngModel)]="seller.sContactNumber"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sContactNumber'].dirty && signupSellerForm.hasError('required','sContactNumber')">*Contact
+              Number is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="bankname" class="form-label">Bank Name</label>
+            <input type="text" formControlName="sBank" class="form-control" name="sBank" [(ngModel)]="seller.sBank"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sBank'].dirty && signupSellerForm.hasError('required','sBank')">*Bank
+              name is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="bankbranch" class="form-label">Bank Branch</label>
+            <input type="text" formControlName="sBankBranch" class="form-control" name="sBankBranch"
+              [(ngModel)]="seller.sBankBranch"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sBankBranch'].dirty && signupSellerForm.hasError('required','sBankBranch')">*Bank
+              branch is Required</span>
+          </div>
+          <div class="mb-3">
+            <label for="acnumber" class="form-label">Bank Account Number</label>
+            <input type="number" formControlName="sAccountNumber" class="form-control" name="sAccountNumber"
+              [(ngModel)]="seller.sAccountNumber"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sAccountNumber'].dirty && signupSellerForm.hasError('required','sAccountNumber')">*Account
+              Number is Required</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">NIC Front Side Image</label>
+            <input #imageInput type="file" name="file" accept="image/*" class="form-control"
+              (change)="processFile(imageInput)"><br>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">NIC Back Side Image</label>
+            <input #backImageInput type="file" name="file" accept="image/*" class="form-control"
+              (change)="processBackFile(backImageInput)"><br>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Bank Statement Image</label>
+            <input #bankImageInput type="file" name="file" class="form-control" accept="image/*" class="form-control"
+              (change)="processBankFile(bankImageInput)"><br>
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" formControlName="sPassword" class="form-control" name="sPassword"
+              [(ngModel)]="seller.sPassword"><br>
+            <span class="text-danger"
+              *ngIf="signupSellerForm.controls['sPassword'].dirty && signupSellerForm.hasError('required','sPassword')">*Password
+              is Required</span>
+          </div>
+          <button type="submit" [disabled]="!signupSellerForm.valid" class="btn btn-primary mb-3">Sign Up</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

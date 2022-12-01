@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top: 50px; margin-bottom: 50px;">
+      <form [formGroup]="addItemForm" (ngSubmit)="addItem()">
+        <div class="form-group">
+          <label>Item Name</label>
+          <input type="text" formControlName="name" class="form-control" placeholder="Enter Item Name" name="name"
+            [(ngModel)]="accessories.name"><br>
+          <span class="text-danger"
+            *ngIf="addItemForm.controls['name'].dirty && addItemForm.hasError('required','name')">*Item name is
+            required</span>
+        </div>
+        <div class="form-group">
+          <label>Item Manufacturer</label>
+          <input type="text" formControlName="manufacturer" class="form-control" placeholder="Enter Item Manufacturer"
+            name="manufacturer" [(ngModel)]="accessories.manufacturer"><br>
+          <span class="text-danger"
+            *ngIf="addItemForm.controls['manufacturer'].dirty && addItemForm.hasError('required','manufacturer')">*Item
+            manufacturer is required</span>
+        </div>
+        <div class="form-group">
+          <label>Item Description</label>
+          <input type="text" formControlName="description" class="form-control" placeholder="Enter Item Description"
+            name="description" [(ngModel)]="accessories.description"><br>
+          <span class="text-danger"
+            *ngIf="addItemForm.controls['description'].dirty && addItemForm.hasError('required','description')">*Item
+            description is required</span>
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input type="text" formControlName="price" class="form-control" placeholder="Enter Price" name="price"
+            [(ngModel)]="accessories.price"><br>
+          <span class="text-danger"
+            *ngIf="addItemForm.controls['price'].dirty && addItemForm.hasError('required','price')">*Item price is
+            required</span>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image</label>
+          <input #imageInput type="file" class="form-control" accept="image/*" name="file"
+            (change)="processFile(imageInput)">
+        </div>
+        <button type="submit" [disabled]="!addItemForm.valid" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

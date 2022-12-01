@@ -1,0 +1,32 @@
+
+<div class="container">
+    <div class="card-login">
+        <div class="text-center">
+          <h1>LOGIN</h1>
+          <h4>Please enter email and password!</h4>
+          <h3 id="loginError" style="color: red;"></h3>
+        </div>
+        <form [formGroup]="loginsellerForm" (ngSubmit)="loginSeller()">
+          <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" formControlName="sEmail" class="form-control" name="sEmail"
+              [(ngModel)]="seller.sEmail"><br>
+            <span class="text-danger"
+              *ngIf="loginsellerForm.controls['sEmail'].dirty && loginsellerForm.hasError('required','sEmail')">*Email
+              ID is Required</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" formControlName="sPassword" class="form-control" name="sPassword"
+              [(ngModel)]="seller.sPassword"><br>
+            <span class="text-danger"
+              *ngIf="loginsellerForm.controls['sPassword'].dirty && loginsellerForm.hasError('required','sPassword')">*Password
+              is Required</span>
+          </div>
+          <button type="submit" [disabled]="!loginsellerForm.valid" class="btn btn-info mb-3">Login</button>
+          <span style="color: white; float: right; margin-top: 8px; font-size: 16px;">Don't have an account? <a href="/signup-seller">Sign Up</a></span>
+        </form>
+      </div>
+
+      
+</div>

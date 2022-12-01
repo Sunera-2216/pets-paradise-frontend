@@ -1,0 +1,71 @@
+<div class="container" style="margin-top: 50px; margin-bottom: 50px;">
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="addPetForm" (ngSubmit)="addPet()">
+        <div class="form-group">
+          <label>Pet Name</label>
+          <input type="text" formControlName="name" class="form-control" placeholder="Enter Pet Name" name="name"
+            [(ngModel)]="pet.name"><br>
+          <span class="text-danger"
+            *ngIf="addPetForm.controls['name'].dirty && addPetForm.hasError('required','name')">*Pet name is
+            Required</span>
+        </div>
+        <div class="form-group">
+          <label>Pet Species</label>
+          <input type="text" formControlName="species" class="form-control" placeholder="Enter Pet Model" name="species"
+            [(ngModel)]="pet.species"><br>
+          <span class="text-danger"
+            *ngIf="addPetForm.controls['species'].dirty && addPetForm.hasError('required','species')">*Pet Species is
+            Required</span>
+        </div>
+        <div class="form-group">
+          <label>Pet Breed</label>
+          <input type="text" formControlName="breed" class="form-control" placeholder="Enter Pet Model" name="breed"
+            [(ngModel)]="pet.breed"><br>
+          <span class="text-danger"
+            *ngIf="addPetForm.controls['breed'].dirty && addPetForm.hasError('required','breed')">*Pet breed is
+            Required</span>
+        </div>
+        <div class="form-group">
+          <label>Pet Age (Months)</label>
+          <input type="text" formControlName="age" class="form-control" placeholder="Enter Pet Age" name="age"
+            [(ngModel)]="pet.age"><br>
+          <span class="text-danger"
+            *ngIf="addPetForm.controls['age'].dirty && addPetForm.hasError('required','age')">*Pet age is
+            Required</span>
+        </div>
+        <div class="form-group">
+          <label>Pet Description</label>
+          <input type="textarea" formControlName="description" class="form-control" placeholder="Enter Pet Description"
+            name="description" [(ngModel)]="pet.description"><br>
+          <span class="text-danger"
+            *ngIf="addPetForm.controls['description'].dirty && addPetForm.hasError('required','description')">*Pet
+            description is Required</span>
+        </div>
+        <div class="form-group">
+          <label>Pet Gender</label><br>
+          <input type="radio" formControlName="gender" name="gender" [(ngModel)]="pet.gender" value="Male">&nbsp;Male
+          <input type="radio" formControlName="gender" name="gender" [(ngModel)]="pet.gender"
+            value="Female">&nbsp;Female<br>
+          <span class="text-danger"
+            *ngIf="addPetForm.controls['gender'].dirty && addPetForm.hasError('required','gender')">*Pet gender is
+            Required</span>
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input type="text" formControlName="price" class="form-control" placeholder="Enter Price" name="price"
+            [(ngModel)]="pet.price"><br>
+          <span class="text-danger"
+            *ngIf="addPetForm.controls['price'].dirty && addPetForm.hasError('required','price')">*Pet price is
+            Required</span>
+        </div>
+        <div class="form-group">
+          <label>Image</label>
+          <input #imageInput type="file" class="form-control" accept="image/*" name="petImage1"
+            (change)="processFile(imageInput)">
+        </div>
+        <button type="submit" [disabled]="!addPetForm.valid" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

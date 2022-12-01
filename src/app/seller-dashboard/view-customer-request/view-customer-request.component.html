@@ -1,0 +1,69 @@
+<div class="conrainer">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <a class="navbar-brand" >View Customer Request Details</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/seller-dashboard" >Seller Dashboard <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- <div class="row card_board">
+          <div class="col-md-2" *ngFor="let request of request">
+            <div class="card" style="margin-top: 20px; margin-left: 20px; margin-right: 20px;">
+                <div class="card_img">
+                  <img src="{{request.imageUrl}}" alt="pic" class="img_test" width="150px" height="100px">
+                </div>
+                <div class="cardname">
+                    <p class="pet_species">{{request.species}}</p>
+                  </div>
+                <div class="cardname">
+                  <p class="pet_breed">{{request.breed}}</p>
+                </div>
+                <div class="cardprice">
+                    <p class="pet_gender">{{request.gender}}</p>
+                </div>
+                <div class="cardname">
+                    <p class="pet_age">{{request.age}}</p>
+                  </div>
+                <div class="cardbtn">
+                  <button  (click)="addToCart(pet)" type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                </div>
+              </div>
+          </div>
+      </div> -->
+
+      <table class="table table-striped" style="margin-left: 50px; margin-top: 50px;">
+        <thead>
+          <tr>
+            <th>Pet Image</th>
+            <th>Pet Species</th>
+            <th>Pet Breed</th>
+            <th>Gender</th>
+            <th>Age(month)</th>
+            <!-- <th>Customer Name</th>
+            <th>Email</th>
+            <th>Contact Number</th> -->
+            
+          </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let request of request">
+                <td><img src="{{request.imageUrl}}" width="100px" alt=""></td>
+                <td> {{request.species}} </td>
+                <td> {{request.breed}} </td>
+                <td> {{request.gender}} </td>
+                <td> {{request.age}} </td>
+                <!-- <th><button routerLink="/customer-details" (click)="viewCustomerDetails(request)">View Customer Details</button></th> -->
+            </tr>
+          </tbody>
+      </table>
+      
+</div>

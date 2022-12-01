@@ -1,0 +1,42 @@
+.card-login{
+    margin-top: 20px;
+    margin-left: 400px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background: hsla(205, 46%, 30%, 1);
+    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+}
+
+.card-signup{
+    margin-top: 700px;
+    margin-left: 200px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background: hsla(205, 46%, 30%, 1);
+    background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+}
+
+.card h1,
+h4 {
+    color: #fff;
+}
+
+.card,
+h1{
+    color: #fff;
+}
+
+
+label {
+    color: #fff;
+}
