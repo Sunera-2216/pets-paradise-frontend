@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand">Pet Details</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/admin">Admin Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h2 style="margin-top: 50px;">Item Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>Item Image</th>
+              <th>Item Name</th>
+              <th>Item Description</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+  
+          <tbody>
+            <tr *ngFor="let accessories of item">
+              <td><img src="{{accessories.imageUrl}}" width="100px" alt=""></td>
+              <td>{{accessories.name}}</td>
+              <td>{{accessories.description}}</td>
+              <td>Rs. {{accessories.price}}.00</td>
+            </tr>
+          </tbody>
+    </table>
+  
+  </div>
+
+

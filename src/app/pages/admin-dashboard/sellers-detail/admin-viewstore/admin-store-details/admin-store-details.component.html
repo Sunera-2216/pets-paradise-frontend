@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+  <a class="navbar-brand">Store Details</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/admin">Admin Dashboard <span class="sr-only">(current)</span></a>
+
+      </li>
+    </ul>
+    <!-- <button class="btn btn-primary" routerLink="/add-pet">Add Pet</button>
+    <button class="btn btn-primary" routerLink="/add-item">Add Accessories</button> -->
+  </div>
+</nav>
+<h1 style="margin-top: 20px; margin-left: 20px;">{{store.storeName}}</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-stripped" style="margin-top: 20px;">
+        <thead>
+          <h2>Pet Details</h2>
+          <tr>
+            <th>Pet Image</th>
+            <th>Pet Name</th>
+            <th>Pet Description</th>
+            <th>Pet Gender</th>
+            <th>Pet Type</th>
+            <th>Pet Model</th>
+            <th>Pet Age</th>
+            <th>Pet Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let pet of petsList">
+            <td><img src="{{pet.imageUrl}}" width="100px" alt=""></td>
+            <td>{{pet.name}}</td>
+            <td>{{pet.description}}</td>
+            <td>{{pet.gender}}</td>
+            <td>{{pet.species}}</td>
+            <td>{{pet.breed}}</td>
+            <td>{{pet.age}}</td>
+            <td>Rs. {{pet.price}}.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-stripped" style="margin-top: 50px;">
+        <thead>
+          <h2>Item Details</h2>
+          <tr>
+            <th>Item Image</th>
+            <th>Item Name</th>
+            <th>Item Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let accessories of itemList">
+            <td><img src="{{accessories.imageUrl}}" width="100px" alt=""></td>
+            <td>{{accessories.name}}</td>
+            <td>{{accessories.description}}</td>
+            <td>Rs. {{accessories.price}}.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

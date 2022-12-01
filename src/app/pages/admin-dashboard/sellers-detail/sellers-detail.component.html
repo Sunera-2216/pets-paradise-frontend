@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand">Seller Details</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/admin">Admin Dashboard <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <h2 style="margin-top: 50px;">Seller List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Seller Name</th>
+          <th>Address</th>
+          <th>Contact Number</th>
+          <th>Email</th>
+          <th>Account Number</th>
+          <th>Bank</th>
+          <!-- <th>Image</th> -->
+          <th>View Strore</th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        <tr *ngFor="let seller of seller">
+            <td> {{seller.sFullName}} </td>
+            <td> {{seller.sAddress}} </td>
+            <td> {{seller.sContactNumber}} </td>
+            <td> {{seller.sEmail}} </td>
+            <td> {{seller.sAccountNumber}} </td>
+            <td> {{seller.sBank}} </td>
+            <!-- <td><img src="{{seller.sNicImageUrl}}" width="100px" alt=""></td> -->
+            <!-- <td><button type="button" class="btn btn-primary"
+                (click)="setSelectedStore($event, store)">{{store.storeName}}</button></td> -->
+          <td><button type="button" class="btn btn-primary" routerLink="/admin-viewstore" (click)="onClick(seller)">View Store</button></td>           
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>

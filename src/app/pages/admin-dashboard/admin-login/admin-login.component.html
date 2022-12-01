@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h4>Please enter email and password!</h4>                    
+                </div>               
+                <form [formGroup]="adminloginForm"  (ngSubmit)="loginAdmin()">
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
+                        <input type="email" formControlName="email"  class="form-control" name="email" [(ngModel)]="admin.email"><br>
+                        <span class="text-danger" *ngIf="adminloginForm.controls['email'].dirty && adminloginForm.hasError('required','email')">*Email ID is Required</span><br>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" formControlName="password" class="form-control" name="password" [(ngModel)]="admin.password"><br>
+                        <span class="text-danger" *ngIf="adminloginForm.controls['password'].dirty && adminloginForm.hasError('required','password')">*Password is Required</span>
+                    </div>
+                    <button type="submit" [disabled]="!adminloginForm.valid" class="btn btn-lg btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
