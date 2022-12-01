@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Sign UP</h1>
+                    <h4>Register your Self!</h4>                    
+                </div>
+                <form [formGroup]="signupBuyerForm" (ngSubmit)="validateData()">
+                    <div class="mb-3">
+                        <label for="fname" class="form-label">First Name</label>
+                        <input type="text" formControlName="fname" class="form-control" name="fname" required [(ngModel)]="buyer.fname">
+                        <span class="text-danger"
+                          *ngIf="signupBuyerForm.controls['fname'].dirty && signupBuyerForm.hasError('required','fname')">*First
+                            Name is Required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="lname" class="form-label">Last Name</label>
+                        <input type="text" formControlName="lname" class="form-control" name="lname" required [(ngModel)]="buyer.lname">
+                        <span class="text-danger"
+                          *ngIf="signupBuyerForm.controls['lname'].dirty && signupBuyerForm.hasError('required','lname')">*First
+                            Name is Required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" formControlName="address" class="form-control" name="address" required [(ngModel)]="buyer.address">
+                        <span class="text-danger"
+                          *ngIf="signupBuyerForm.controls['address'].dirty && signupBuyerForm.hasError('required','address')">*First
+                            Name is Required</span>
+                      </div>
+                      <div class="mb-3">
+                        <label for="contactnumber" class="form-label">Contact Number</label>
+                        <input type="text" formControlName="contact_number" class="form-control" name="contact_number" required [(ngModel)]="buyer.contact_number">
+                        <span class="text-danger"
+                          *ngIf="signupBuyerForm.controls['contact_number'].dirty && signupBuyerForm.hasError('required','contact_number')">*First
+                            Name is Required</span>
+                      </div>
+                    
+                    <div class="mb-3">
+                      <label for="email1" class="form-label">Email address</label>
+                      <input type="email" formControlName="email" class="form-control" name="email" required [(ngModel)]="buyer.email">
+                      <span class="text-danger"
+                          *ngIf="signupBuyerForm.controls['email'].dirty && signupBuyerForm.hasError('required','email')">*First
+                            Name is Required</span>
+                    </div>
+                    <div class="mb-3">
+                      <label for="password1" class="form-label">Password</label>
+                      <input type="password" formControlName="password" class="form-control" name="password" required [(ngModel)]="buyer.password">
+                      <span class="text-danger"
+                          *ngIf="signupBuyerForm.controls['password'].dirty && signupBuyerForm.hasError('required','password')">*First
+                            Name is Required</span>
+                    </div>
+                    <button type="submit" [disabled]="!signupBuyerForm.valid" class="btn btn-primary mb-3">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
