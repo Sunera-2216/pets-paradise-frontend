@@ -1,0 +1,64 @@
+<div>
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+        <a class="navbar-brand" >Buyer Request Page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" routerLink="/" >Home<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 20px;">
+          <form [formGroup]="requestPetForm" (ngSubmit)="requestPet()">
+            <div class="form-group">
+              <label>Pet Species</label>
+              <input type="text" formControlName="species" class="form-control" placeholder="Enter Pet Model" name="species"
+                [(ngModel)]="request.species"><br>
+              <span class="text-danger"
+                *ngIf="requestPetForm.controls['species'].dirty && requestPetForm.hasError('required','species')">*Pet Species is
+                Required</span>
+            </div>
+            <div class="form-group">
+              <label>Pet Breed</label>
+              <input type="text" formControlName="breed" class="form-control" placeholder="Enter Pet Model" name="breed"
+                [(ngModel)]="request.breed"><br>
+              <span class="text-danger"
+                *ngIf="requestPetForm.controls['breed'].dirty && requestPetForm.hasError('required','breed')">*Pet breed is
+                Required</span>
+            </div>
+            <div class="form-group">
+              <label>Pet Age (Months)</label>
+              <input type="text" formControlName="age" class="form-control" placeholder="Enter Pet Age" name="age"
+                [(ngModel)]="request.age"><br>
+              <span class="text-danger"
+                *ngIf="requestPetForm.controls['age'].dirty && requestPetForm.hasError('required','age')">*Pet age is
+                Required</span>
+            </div>
+            <div class="form-group">
+              <label>Pet Gender</label><br>
+              <input type="radio" formControlName="gender" name="gender" [(ngModel)]="request.gender" value="Male">&nbsp;Male
+              <input type="radio" formControlName="gender" name="gender" [(ngModel)]="request.gender"
+                value="Female">&nbsp;Female<br>
+              <span class="text-danger"
+                *ngIf="requestPetForm.controls['gender'].dirty && requestPetForm.hasError('required','gender')">*Pet gender is
+                Required</span>
+            </div>
+            <div class="form-group">
+              <label>Image</label>
+              <input #imageInput type="file" class="form-control" accept="image/*" name="petImage1"
+                (change)="processFile(imageInput)">
+            </div>
+            <button type="submit" [disabled]="!requestPetForm.valid" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div> 
+    
+  </div>

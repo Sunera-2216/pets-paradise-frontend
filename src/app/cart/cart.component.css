@@ -1,0 +1,56 @@
+* {box-sizing: border-box;}
+
+/* navgigation bar */
+
+
+.nav_img {
+    text-align: center;
+}
+
+.container-fluid::after,.container-fluid::before{
+    display: none;
+}
+
+.nav_title_bar{
+  background-color: gray;
+}
+
+.nav_title_bar .container-fluid .navbar-header a{
+    color: white;
+    
+}
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+/*content*/
+.cart_table{
+    margin: 20px;
+}
+
+/* Footer */
+.footer{
+    background-color: rgb(58, 58, 68);
+  }
+  
+  .footer .footer_links .grid_row .footer_topics h5{
+    color:rgb(212, 163, 57); 
+  }
+  
+  .footer .footer_links .grid_row .footer_topics p{
+    color:white; 
+   
+  }
+  
+  .footer .footer_links .grid_row .grid_col h5{
+    color:rgb(168, 123, 24); 
+    
+  }
+  
+  .footer .footer_links .grid_row .footer_topics .ul li{
+    color: white; 
+    
+  } 
+

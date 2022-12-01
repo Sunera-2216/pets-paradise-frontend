@@ -1,0 +1,112 @@
+/* header  */
+* {box-sizing: border-box;}
+  
+i{
+  color: white;
+}
+.header {
+  overflow: hidden;
+  background-color:rgb(105, 45, 45);
+  padding: 10px 5px;
+}
+
+ .header .header_nav .header_row{
+  margin : 0 10px;
+}
+
+.header .header_nav .header_row .header_name{
+  padding: 0 30px;
+} 
+ 
+.header .header_nav .header_row{
+  margin-right: 0;
+  min-height: 50px;
+}
+
+.header .header_nav .header_row .header_right ul{
+  /* justify-content: flex-end; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-left: 0;
+}
+
+.header .header_nav .header_row .header_right .header_links{
+  color: rgba(245, 239, 239, 0.932);
+  padding: 15px;
+  padding-left: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+
+.header .header_nav .header_row .header_right .header_links:hover{
+  background-color: rgb(185, 164, 157);
+  color: rgb(240, 239, 239); 
+}
+
+.header .header_nav .header_row .header_right .header_links a{
+ text-decoration:none;
+ color: rgba(245, 239, 239, 0.932);
+ font-size: 15px; 
+ border-radius: 4px;
+}
+
+
+
+ @media screen and (max-width: 600px) {
+  .header .header_nav .header_row .header_links_names {
+    
+  }
+
+  .homecontent .privacypolicy{
+    text-align: center;
+  }
+  
+  .footer .footer_row{
+    text-align: center;
+  }   
+}
+
+/* content */
+.content{
+  height: 420px;
+  background-color: white;
+}
+
+.content .privacypolicy{
+  height: 380px;
+  background-color: rgb(231, 221, 221);
+  margin-top: 20px;
+  border: 1px solid rgb(116, 42, 42);
+  border-radius: 1px;
+  padding-top: 40px;
+  font-style: italic;
+}
+
+
+/* Footer */
+.footer{
+  background-color: rgb(58, 58, 68);
+}
+
+.footer .footer_links .grid_row .footer_topics h5{
+  color:rgb(212, 163, 57); 
+}
+
+.footer .footer_links .grid_row .footer_topics p{
+  color:white; 
+ 
+}
+
+.footer .footer_links .grid_row .grid_col h5{
+  color:rgb(168, 123, 24); 
+  
+}
+
+.footer .footer_links .grid_row .footer_topics .ul li{
+  color: white; 
+  
+} 

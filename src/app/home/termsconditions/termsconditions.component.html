@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="nav_img">
+  <div class="row">
+    <div class="col-md-12">
+        <img src="assets/images/img12.jpg" alt="">
+    </div>
+  </div>
+</div>  
+
+<div class="row">
+  <div class="col-md-12" style="width: 100%;">
+    <nav class="navbar navbar-inverse nav_title_bar">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <i style="font-size: 30px; color: white;" class="fas fa-paw" >&nbsp;</i>
+          <strong style="color:white; font-size:25px;">Pets' Paradise</strong>
+        </div>
+        <ul class="nav navbar-nav navbar-right nav_links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Sell on Pets's Paradise</a></li> 
+          <li><a href="#">Sign Up</a></li>
+          <li><a href="#"> Login</a></li> 
+          <li><i style="font-size: 25px; color: white; padding-top: 10px; width: 30px;" class="fas fa-shopping-cart"  ></i></li>
+        </ul>
+      </div>
+    </nav>
+      
+  </div>
+</div>
+
+
+  <div class="container homecontent">
+    <!-- search bar-->
+        <div class="row search_row">
+          <div class="col-md-6 mainsearch_row">
+            <div class="search_col">
+              <div class="input-group search_bar">
+                <div class="form-outline">
+                  <input id="search-input" type="search" id="form1" class="form-control" placeholder="Search in Pet's Paradise"/>
+                </div>
+                <button id="search-button" type="button" class="btn btn-primary">
+                  <i class="fas fa-microphone"></i> 
+                </button>
+                <button id="voice-button" type="button" class="btn btn-primary">
+                  <i class="fas fa-search"></i> 
+                </button>
+              </div>
+            </div>
+           
+          </div>
+          <div class="col-md-2 dropdown">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <option value="pets">Pets</option>
+                <option value="petsaccessories">Pets' Accessories</option>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 dropdown_row">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 dropdown_row">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown button
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+        </div>
+        </div>
+
+        
+      <!-- home_content_img -->
+        <!-- <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <div class="home_content_img">
+              <div class="slick-slider">
+                <hr style="background-color:black" />  
+             <div class="row">  
+               <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">  
+                 <div ngxSlickItem *ngFor="let image of images" class="slide">  
+                   <img src="{{ image.img }}" width="100%">  
+                 </div>  
+               </ngx-slick-carousel>  
+             </div>
+              </div>
+            </div> 
+          </div>
+          <div class="col-md-2"></div>
+        </div> -->
+
+        <!-- cards -->
+        <div class="row card_board">
+            <div class="col-md-6">
+              <div class="pets_accessories">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 class="head_pet">Pets</h4>
+                  </div>
+                  <div class="col-md-6 seemore">
+                    <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
+                  </div>
+                </div>
+
+                <div class="row card_pad">
+                  <div class="col-md-6">
+                    <div class="card">
+                        <div class="card_img">
+                          <img src="assets/images/img3.jpg" alt="pic" class="img_test" width="150 px" height="100px">
+                        </div>
+                      <div class="cardname">
+                        <p class="pet_name">Germen Shepherd</p> 
+                      </div>
+                      <div class="cardprice">
+                        <h6>Rs.20000</h6>
+                      </div>
+                      <div class="cardbtn">
+                        <button type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="card">
+                        <div class="card_img">
+                          <img src="assets/images/img6.jpg" alt="pic" class="img_test" width="150 px" height="100px">
+                        </div>
+                      <div class="cardname">
+                        <p class="pet_name">Golden Retriever</p> 
+                      </div>
+                      <div class="cardprice">
+                        <h6>Rs.20000</h6>
+                      </div>
+                      <div class="cardbtn">
+                        <button type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+
+            <div class="col-md-6">
+              <div class="pets_accessories">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4 class="head_pet">Pets' Accessories</h4>
+                  </div>
+                  <div class="col-md-6 seemore">
+                    <a href="#">See more<i class="fas fa-angle-double-right"></i></a>
+                  </div>
+                </div>
+                
+                
+                <div class="row card_pad">
+                  <div class="col-md-6">
+                    <div class="card">
+                        <div class="card_img">
+                          <img src="assets/images/img4.jpg" alt="pic" class="img_test" width="150 px" height="100px">
+                      </div>
+                      <div class="cardname">
+                        <p class="pet_name">Food</p> 
+                      </div>
+                      <div class="cardprice">
+                        <h6>Rs.20000</h6>
+                      </div>
+                      <div class="cardbtn">
+                        <button type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="card">
+                        <div class="card_img">
+                          <img src="assets/images/img5.jpg" alt="pic" class="img_test" width="150 px" height="100px">
+                        </div>
+                      <div class="cardname">
+                        <p class="pet_name">Medicine</p> 
+                      </div>
+                      <div class="cardprice">
+                        <h6>Rs.20000</h6>
+                      </div>
+                      <div class="cardbtn">
+                        <button type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            </div>
+          </div>  
+        </div>
+
+
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4" style="background-color: rgb(48, 40, 40);">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-4 mx-auto">
+
+        <!-- Content -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+        <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+          consectetur
+          adipisicing elit.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-2 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+          <li>
+            <a href="#!">Link 4</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <hr>
+
+  <!-- Call to action -->
+  <ul class="list-unstyled list-inline text-center py-2">
+    <li class="list-inline-item">
+      <h5 class="mb-1">Register for free</h5>
+    </li>
+    <li class="list-inline-item">
+      <a href="#!" class="btn btn-danger btn-rounded">Sign up!</a>
+    </li>
+  </ul>
+  <!-- Call to action -->
+
+  <hr>
+
+  <!-- Social buttons -->
+  <ul class="list-unstyled list-inline text-center">
+    <li class="list-inline-item">
+      <a class="btn-floating btn-fb mx-1">
+        <i class="fab fa-facebook-f"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-tw mx-1">
+        <i class="fab fa-twitter"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-gplus mx-1">
+        <i class="fab fa-google-plus-g"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-li mx-1">
+        <i class="fab fa-linkedin-in"> </i>
+      </a>
+    </li>
+    <li class="list-inline-item">
+      <a class="btn-floating btn-dribbble mx-1">
+        <i class="fab fa-dribbble"> </i>
+      </a>
+    </li>
+  </ul>
+  <!-- Social buttons -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://mdbootstrap.com/">Pets' Paradise </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+</body>
+</html>

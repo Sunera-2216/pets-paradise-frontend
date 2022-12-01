@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body id="bg">
+  <div class="nav_img">
+    <div class="row">
+      <div class="col-md-12">
+        <img src="assets/images/img12.jpg" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <nav class="navbar navbar-inverse nav_title_bar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a routerLink=""><i style="font-size: 30px; color: white;" class="fas fa-paw">&nbsp;</i></a>
+            <a routerLink="" style="text-decoration: none;"><strong style="color:white; font-size:25px;">Pets'
+                Paradise</strong></a>
+          </div>
+          <ul class="nav navbar-nav navbar-right nav_links">
+            <li><a routerLink="" style="color: white; font-size: medium;">Home</a></li>
+            <li><a *ngIf="!this.isVisible" routerLink="/request" style="color: white; font-size: medium;">Buyer Request</a></li>
+            <li><a *ngIf="this.isVisible" routerLink="/login-seller" style="color: white; font-size: medium;">Sell on Pets's Paradise</a></li>
+            <li><a *ngIf="this.isVisible" routerLink="/signup" style="color: white; font-size: medium;">Sign Up</a></li>
+            <li><a *ngIf="this.isVisible" routerLink="/login" style="color: white; font-size: medium;">Login</a></li>
+            <li><a routerLink="/cart"><i style="font-size: 25px; color: white; margin-top: 5px; width: 30px;"
+                  class="fas fa-shopping-cart"></i></a></li>
+            <li><a *ngIf="!this.isVisible" routerLink="" style="color: white; font-size: medium;">Logout</a></li>
+            <li><a *ngIf="!this.isVisible" style="color: black; font-size: medium;">{{loggedBuyer}}</a></li>
+            </ul>
+        </div>
+      </nav>
+      <!-- <nav class="navbar navbar-inverse nav_title_bar">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a routerLink=""><i style="font-size: 30px; color: white;" class="fas fa-paw">&nbsp;</i></a>
+            <a routerLink="" style="text-decoration: none;"><strong style="color:white; font-size:25px;">Pets'
+                Paradise</strong></a>
+          </div>
+          <ul class="nav navbar-nav navbar-right nav_links">
+            <li><a routerLink="" style="color: white; font-size: medium;">Home</a></li>
+            <li><a routerLink="/signup" style="color: white; font-size: medium;">Sign Up</a></li>
+            <li><a routerLink="/login" style="color: white; font-size: medium;">Login</a></li>
+            <li><a routerLink="/request" style="color: white; font-size: medium;">Buyer Request</a></li>
+            <div class="dropdown" style="color: white; font-size: medium; margin-top: 10px;">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                Sell on Pets's Paradise
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#" routerLink="/signup-seller">Sign Up</a>
+                <a class="dropdown-item" href="#" routerLink="/login-seller">Login</a>
+              </div>
+            </div>
+            
+            <li><a routerLink="/cart"><i style="font-size: 25px; color: white; margin-top: 5px; width: 30px;"
+                  class="fas fa-shopping-cart"></i></a></li>
+          </ul>
+        </div>
+      </nav> -->
+
+    </div>
+  </div>
+
+
+  <div class="homecontent">
+    <!-- search bar-->
+    <div class="row search_row">
+      <div class="col-md-6 mainsearch_row">
+        <div class="search_col">
+          <div class="input-group search_bar">
+            <form (ngSubmit)="searchProduct()">
+              <div class="form-outline">
+                <input id="search-input" name="searchKeyword" type="text" class="form-control"
+                  placeholder="Search in Pet's Paradise" [(ngModel)]="searchKeyword" value="{{voiceText}}" />
+              </div>
+              <button id="voice-button" type="submit" class="btn btn-primary">
+                <i class="fas fa-search" style="font-size: 20px;"></i>
+              </button>
+              <button id="search-button" type="button" class="btn btn-primary"
+                *ngIf="voiceActiveSectionDisabled; else voicesection;" (click)="startVoiceRecognition()">
+                <i class="fas fa-microphone" style="font-size: 20px;"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-2 label label-info" style="padding-top: 25px;">
+        <span class="" style="font-size: 15px;  padding-top:20px;">Search Your Pet From Image</span>
+        <!-- <label for="" style="margin-top: 10px; color:rgb(17, 5, 70); font-size:20px; font-weight: bold; margin: bottom 10px;">Add Your Image & Find your Pet</label> -->
+      </div>
+      <div class="col-md-4 dropdown" style="background-color:#5bc0de; height:100%;">
+        <!-- <div class="dropdown">
+          <button style="width: 100%;" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" name="catMenu"
+            (change)="filterCategory($event)">
+            <a value="pets" class="dropdown-item" href="#">Pets</a>
+            <a value="acc" class="dropdown-item" href="#">Pets' Accessories</a>
+          </div>
+        </div> -->
+        <!-- <form action="">
+          <div class="img-search">
+            <input type="file" class="form-control-file">
+          </div>
+        </form> -->
+
+        <div>
+          <input #image class="form-control form-control-lg" id="formFileLg" (change)="predict(image)" type="file" accept="image/*" style="margin-top: 16px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- <div *ngIf="voiceActiveSectionDisabled; else voicesection;">
+      <button type="button" (click)="startVoiceRecognition()">Record</button>
+    </div> -->
+    <ng-template #voicesection>
+      <ng-container *ngIf="!voiceActiveSectionError; else failure">
+        <ng-container *ngIf="voiceText; else start">
+          <!-- <span>{{voiceText}}</span> -->
+        </ng-container>
+        <ng-template #start>
+          <ng-container *ngIf="voiceActiveSectionListening; else beginning">
+            <span>Listening...</span>
+          </ng-container>
+          <ng-template #beginning>
+            <span>Start talking...</span>
+          </ng-template>
+        </ng-template>
+      </ng-container>
+      <ng-template #failure>
+        <span>Didn't catch that</span>
+      </ng-template>
+      <!-- <div>
+        <button (click)="closeVoiceRecognition()">Close</button>
+        <button (click)="startVoiceRecognition()">Restart</button>
+      </div> -->
+    </ng-template>
+
+
+    <!-- home_content_img -->
+    <div class="row">
+      <div class="col-md-2" style="background-color: rgb(143, 0, 0);">
+        <div class="category" style="margin-top: 42px; width: 210px; margin-left:19px;">
+          <select class="dropdown btn btn-secondary dropdown-toggle" style="width: 100%; text-align: start; "
+          (change)="filterCategory($event)">
+          <option value="categories" selected class="dropdown-item">Categories</option>
+          <option value="pets" class="dropdown-item">Pets</option>
+          <option value="accessories" class="dropdown-item">Pets' Accessories</option>
+        </select>
+        </div>
+
+        <div class="row">
+          <div class="category" style="margin-top: 30px; width:230px; margin-left:20px;">
+            <select class="dropdown btn btn-secondary dropdown-toggle" style="width: 100%; text-align: start; "
+            (change)="filterCategory($event)">
+            <option value="price" selected class="dropdown-item">Price</option>
+            <option value="" class="dropdown-item">Rs. 1000.00 - Rs. 5000.00</option>
+            <option value="" class="dropdown-item">Rs. 5000.00 - Rs. 10000.00</option>
+            <option value="" class="dropdown-item">Rs. 10000.00 - Rs. 30000.00</option>
+            <option value="" class="dropdown-item">Rs. 30000.00 - Rs. 50000.00</option>
+            <option value="" class="dropdown-item">Above Rs. 50000.00</option>
+
+          </select>
+          </div>
+      </div>
+        
+
+        <div class="row">
+          <div class="age" style="margin-top: 30px; width:230px; margin-left:20px;">
+            <select class="dropdown btn btn-secondary dropdown-toggle" style="width: 100%; text-align: start; "
+            (change)="filterCategory($event)">
+            <option value="categories" selected class="dropdown-item">Age</option>
+            <option value="" class="dropdown-item">Below 12 months</option>
+            <option value="" class="dropdown-item">12-36 months</option>
+            <option value="" class="dropdown-item">Above 36 months</option>
+          </select>
+          </div>
+        </div>
+        
+        
+      </div>
+      <div class="col-md-8" style="height: 100%;">
+        <div class="home_content_img">
+          <div class="slick-slider">
+            <hr style="background-color:black" />
+            <div class="row">
+              <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let image of images" class="slide">
+                  <img src="{{ image.img }}" width="100%">
+                </div>
+              </ngx-slick-carousel>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2" style="background-color:rgb(143, 0, 0); border-radius:5px;"></div>
+    </div>
+
+    <!-- cards -->
+    <div class="row card_board" style="background-color: rgb(223, 222, 207);">
+      <div class="col-md-6">
+        <div class="pets_accessories">
+          <div class="row" style="background-color: rgb(170, 167, 121); border-radius:3px; margin-left:1px; margin-top:2px; margin-right:3px;">
+            <div class="col-md-6">
+              <h1 class="head_pet" style="font-weight: bold; padding-left: 5px;">Pets</h1>
+            </div>
+            <div class="col-md-6 seemore">
+              <a href="#">See more <i class="fas fa-angle-double-right"></i></a>
+            </div>
+          </div>
+
+          <div class="row card_pad">
+            <div class="col-md-6" *ngFor="let pet of petsList">
+              <div class="card">
+                <div class="card_img">
+                  <img src="{{pet.imageUrl}}" alt="pic" (click)="selectPet(pet)" class="img_test" width="150px" height="100px">
+                </div>
+                <div class="cardname">
+                  <h3 style="color:black" class="pet_name" (click)="selectPet(pet)">{{pet.breed}}</h3>
+                </div>
+                <div class="cardprice">
+                  <h2 style="color: rgb(143, 0, 0); padding-left: 0px;" (click)="selectPet(pet)">Rs. {{pet.price}}.00</h2>
+                </div>
+                <div class="cardbtn">
+                  <button id="addToCartBtn" type="button" class="btn btn-primary pet_btn" (click)="addToCart(pet)"> <i class="fas fa-shopping-cart"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-6">
+              <div class="card">
+                <div class="card_img">
+                  <img src="assets/images/img6.jpg" alt="pic" class="img_test" width="150px" height="100px">
+                </div>
+                <div class="cardname">
+                  <p class="pet_name">Golden Retriever</p>
+                </div>
+                <div class="cardprice">
+                  <h6>Rs.20000</h6>
+                </div>
+                <div class="cardbtn">
+                  <button type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="pets_accessories">
+          <div class="row" style="background-color: rgb(170, 167, 121); border-radius:3px; margin-left:1px; margin-top:2px; margin-right:3px;">
+            <div class="col-md-6">
+              <h1 class="head_pet" style="font-weight: bold; font: size 35px;">Pets' Accessories</h1>
+            </div>
+            <div class="col-md-6 seemore">
+              <a href="#">See more<i class="fas fa-angle-double-right"></i></a>
+            </div>
+          </div>
+
+
+          <div class="row card_pad">
+            <div class="col-md-6" *ngFor="let item of itemList">
+              <div class="card">
+                <div class="card_img">
+                  <img src="{{item.imageUrl}}" alt="pic" class="img_test" width="150 px" height="100px">
+                </div>
+                <div class="cardname">
+                  <h3 style="color: black;" class="pet_name">{{item.name}}</h3>
+                </div>
+                <div>
+                  <h2 style="color: rgb(143, 0, 0); padding-left: 0px;">Rs. {{item.price}}.00</h2>
+                </div>
+                <div class="cardbtn">
+                  <button type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-6">
+              <div class="card">
+                <div class="card_img">
+                  <img src="assets/images/img5.jpg" alt="pic" class="img_test" width="150 px" height="100px">
+                </div>
+                <div class="cardname">
+                  <p class="pet_name">Medicine</p>
+                </div>
+                <div class="cardprice">
+                  <h6>Rs.20000</h6>
+                </div>
+                <div class="cardbtn">
+                  <button type="button" class="btn btn-primary pet_btn"> <i class="fas fa-shopping-cart"></i></button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="page-footer pt-4 footer">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left footer_links">
+
+      <!-- Grid row -->
+      <div class="row grid_row">
+
+        <!-- Grid column -->
+        <div class="col-md-4 mx-auto grid_col">
+
+          <!-- Content -->
+          <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Pets' Paradise</h5>
+          <p style="color: white;">Pets' Paradise website is designed for pets and pets’ accessories sellers and for
+            customers who are looking for buying pets and accessories for their pets.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto footer_topics">
+
+          <!-- Links -->
+          <h5>Contact Us</h5>
+          <ul class="list-unstyled">
+            <li style="color: white;">
+              Phone : +94 777 777 777
+            </li>
+            <li style="color: white;">
+              Fax : +94 777 777 777 <br>
+            </li>
+            <li style="color: white;">
+              E-mail : petsparalk@gmail.com
+            </li>
+
+          </ul>
+
+
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto footer_topics">
+
+          <!-- Links -->
+          <h5>Buy Now</h5>
+
+          <ul class="list-unstyled">
+            <li><a routerLink="#" style="color: white; text-decoration: none;">Pets</a></li><br>
+            <li><a routerLink="#" style="color: white; text-decoration: none;">Pets' Accessories</a></li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none">
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto footer_topics">
+
+          <!-- Links -->
+          <h5>Policy</h5>
+
+          <ul class="list-unstyled">
+            <li><a routerLink="/termsconditions" style="color: white; text-decoration: none;">Terms & Conditions</a>
+            </li><br>
+            <li><a routerLink="/privacypolicy" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <hr>
+
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1" style="color: white;">Register for free</h5>
+      </li>
+      <li class="list-inline-item">
+        <a routerLink="/signup" class="btn btn-danger btn-rounded">Sign up!</a>
+      </li>
+    </ul>
+    <!-- Call to action -->
+
+    <hr>
+
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center" style="color: white; padding-bottom: 50px;">© 2021 Copyright : Pets'
+      Paradise
+
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+/* header  */
+* {box-sizing: border-box;}
+  
+i{
+  color: white;
+}
+.header {
+  overflow: hidden;
+  background-color:rgb(105, 45, 45);
+  padding: 10px 5px;
+}
+
+ .header .header_nav .header_row{
+  margin : 0 10px;
+}
+
+.header .header_nav .header_row .header_name{
+  padding: 0 30px;
+} 
+ 
+.header .header_nav .header_row{
+  margin-right: 0;
+  min-height: 50px;
+}
+
+.header .header_nav .header_row .header_right ul{
+  /* justify-content: flex-end; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-left: 0;
+}
+
+.header .header_nav .header_row .header_right .header_links{
+  color: rgba(245, 239, 239, 0.932);
+  padding: 15px;
+  padding-left: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+
+.header .header_nav .header_row .header_right .header_links:hover{
+  background-color: rgb(185, 164, 157);
+  color: rgb(240, 239, 239); 
+}
+
+.header .header_nav .header_row .header_right .header_links a{
+ text-decoration:none;
+ color: rgba(245, 239, 239, 0.932);
+ font-size: 15px; 
+ border-radius: 4px;
+}
+
+
+
+ @media screen and (max-width: 600px) {
+  .header .header_nav .header_row .header_links_names {
+    
+  }
+
+  .homecontent .aboutus{
+    text-align: center;
+  }
+  
+  .footer .footer_row{
+    text-align: center;
+  }   
+}
+
+/* content */
+.content{
+  height: 400px;
+  background-color: white;
+}
+
+.content .aboutus{
+  height: 360px;
+  background-color: rgb(231, 221, 221);;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(116, 42, 42);
+  border-radius: 1px;
+  font-style: italic;
+  padding-top: 40px;
+}
+
+/* footer*/
+.footer{
+  min-height: 320px;
+  width: 100%;
+  background-color:rgb(141, 69, 69); 
+  
+}
+
+
+.footer .footer_link {
+  text-decoration: none;
+  color: white;
+}
+
+.footer .footer_link:hover{
+ color:rgb(71, 71, 2);
+}
+
+.footer .footer_li{
+ list-style-type: none;
+ font-size: 12px;
+ color: white;
+ font-style:italic;
+ font-weight: bold;
+}
+
+.footer .footer_topic{
+ padding-top: 20px;
+ font-size: 20px;
+ color:rgb(65, 13, 13);
+ font-weight: bold;
+}
+
+.footer p{
+ margin-top: 30px;
+ color: white;
+ text-align: center;
+ font-style: oblique;
+}
+
+ 

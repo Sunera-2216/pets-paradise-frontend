@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+  
+    <div class="row">
+        <div class="col-md-12" style="width: 100%;">
+          <nav class="navbar navbar-inverse nav_title_bar">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a routerLink=""><i style="font-size: 30px; color: white;" class="fas fa-paw">&nbsp;</i></a>
+                <a routerLink="" style="text-decoration: none;"><strong style="color:white; font-size:25px;">Pets'
+                    Paradise</strong></a>
+              </div>
+              <ul class="nav navbar-nav navbar-right nav_links">
+                <li><a routerLink="" style="color: white; font-size: medium;">Home</a></li>
+                <li><a routerLink="/signup-seller" style="color: white; font-size: medium;">Sell on Pets's Paradise</a></li>
+                <li><a routerLink="/signup" style="color: white; font-size: medium;">Sign Up</a></li>
+                <li><a routerLink="/login" style="color: white; font-size: medium;">Login</a></li>
+                <li><a routerLink="#"><i style="font-size: 25px; color: white; margin-top: 5px; width: 30px;"
+                      class="fas fa-shopping-cart"></i></a></li>
+              </ul>
+            </div>
+          </nav>
+    
+        </div>
+      </div>
+
+      <!-- content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{{petDetails.imageUrl}}" alt="Image" width="500px;">
+            </div>
+
+            <div class="col-md-6">
+                <h1>{{petDetails.name}}</h1>
+                <h2>{{petDetails.species}}</h2>
+                <h2>{{petDetails.breed}}</h2>
+                <h3>{{petDetails.age}}</h3>
+                <h3>{{petDetails.description}}</h3>
+                <h1>Rs. {{petDetails.price}}.00</h1>
+
+                <button class="btn btn-danger buy" routerLink="/checkout">Buy now</button>
+                <button id="addToCartBtn" class="btn btn-warning cart" (click)="addToCart(pet)">Add to cart</button>
+        
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer pt-4 footer">
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left footer_links">
+    
+          <!-- Grid row -->
+          <div class="row grid_row">
+    
+            <!-- Grid column -->
+            <div class="col-md-4 mx-auto grid_col">
+    
+              <!-- Content -->
+              <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Pets' Paradise</h5>
+              <p style="color: white;">Pets' Paradise website is designed for pets and pets’ accessories sellers and for
+                customers who are looking for buying pets and accessories for their pets.</p>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none">
+    
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto footer_topics">
+    
+              <!-- Links -->
+              <h5>Contact Us</h5>
+              <ul class="list-unstyled">
+                <li style="color: white;">
+                  Phone : +94 777 777 777
+                </li>
+                <li style="color: white;">
+                  Fax : +94 777 777 777 <br>
+                </li>
+                <li style="color: white;">
+                  E-mail : petsparalk@gmail.com
+                </li>
+    
+              </ul>
+    
+    
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none">
+    
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto footer_topics">
+    
+              <!-- Links -->
+              <h5>Buy Now</h5>
+    
+              <ul class="list-unstyled">
+                <li><a routerLink="#" style="color: white; text-decoration: none;">Pets</a></li><br>
+                <li><a routerLink="#" style="color: white; text-decoration: none;">Pets' Accessories</a></li>
+              </ul>
+    
+            </div>
+            <!-- Grid column -->
+    
+            <hr class="clearfix w-100 d-md-none">
+    
+            <!-- Grid column -->
+            <div class="col-md-2 mx-auto footer_topics">
+    
+              <!-- Links -->
+              <h5>Policy</h5>
+    
+              <ul class="list-unstyled">
+                <li><a routerLink="/termsconditions" style="color: white; text-decoration: none;">Terms & Conditions</a>
+                </li><br>
+                <li><a routerLink="/privacypolicy" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+              </ul>
+    
+            </div>
+            <!-- Grid column -->
+    
+          </div>
+          <!-- Grid row -->
+    
+        </div>
+        <!-- Footer Links -->
+    
+        <hr>
+    
+        <!-- Call to action -->
+        <ul class="list-unstyled list-inline text-center py-2">
+          <li class="list-inline-item">
+            <h5 class="mb-1" style="color: white;">Register for free</h5>
+          </li>
+          <li class="list-inline-item">
+            <a routerLink="/signup" class="btn btn-danger btn-rounded">Sign up!</a>
+          </li>
+        </ul>
+        <!-- Call to action -->
+    
+        <hr>
+    
+    
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center" style="color: white; padding-bottom: 50px;">© 2021 Copyright : Pets'
+          Paradise
+    
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
+</body>
+</html>
