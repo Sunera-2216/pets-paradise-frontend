@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "petsparadise",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
